@@ -1,6 +1,5 @@
 import subprocess
-
-print('Hello word')
+import sys
 
 
 def shell(command: str, output: bool = False):
@@ -13,7 +12,9 @@ def shell(command: str, output: bool = False):
         raise ValueError('Error') from e
 
 
-a = 'asdkljakljasd'
-
-v = shell('git describe --tags --long --dirty --always')
+# v = shell('git describe --tags --long --dirty --always')
+try:
+    v = sys.argv[1]
+except IndexError:
+    v = shell('git describe --tags --long --dirty --always')
 print(v)
