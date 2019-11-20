@@ -13,5 +13,7 @@ def shell(command: str, output: bool = False):
         raise ValueError('Error') from e
 
 
+a = 'asdkljakljasd'
+
 v = shell('git describe --tags --long --dirty --always')
 print(v)
